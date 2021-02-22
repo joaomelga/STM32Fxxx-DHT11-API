@@ -71,10 +71,11 @@
  *         I/O
  *
  *  /--- REFERENCES ---/
- *  https://circuitdigest.com/microcontroller-projects/interfacing-dht11-sensor-with-stm32f103c8
- *  https://controllerstech.com/using-dht11-sensor-with-stm32/
- *  https://carnotcycle.wordpress.com/2012/08/04/how-to-convert-relative-humidity-to-absolute-humidity/
- *  Slides provided by UFMG - Prof. Ricardo de Oliveira Duarte - Department of Electronic Engineering
+ *  - https://circuitdigest.com/microcontroller-projects/interfacing-dht11-sensor-with-stm32f103c8
+ *  - https://controllerstech.com/using-dht11-sensor-with-stm32/
+ *  - https://carnotcycle.wordpress.com/2012/08/04/how-to-convert-relative-humidity-to-absolute-humidity/
+ *  - Slides provided by UFMG - Prof. Ricardo de Oliveira Duarte - Department of Electronic Engineering
+ *  - DHT11 Datasheet available in the project root
  */
 
 #ifndef INC_DHT11_H_
