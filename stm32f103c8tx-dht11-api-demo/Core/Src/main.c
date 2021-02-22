@@ -189,7 +189,7 @@ int main(void) {
       break;
 
     default:
-      state = 1;
+      state = 0;
       delay = 0;
       break;
     }

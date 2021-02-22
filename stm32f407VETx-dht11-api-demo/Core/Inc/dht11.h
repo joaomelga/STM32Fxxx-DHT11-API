@@ -1,8 +1,34 @@
 /*
- * dht11.h
+ *  dht11.h
+ *  Copyright (C) 2020  Marcelo Braga & João Melga
+ *  Created on: feb-03-2021
+ *  Institution: UFMG
  *
- *  Created on: 1 de fev de 2021
- *      Author: cladi
+ *  Version 1.0 - API with the following implemented functions:
+ *  void DHT11_init(GPIO_TypeDef* port, uint16_t pin);
+ *	uint8_t DHT11_rawread();
+ *	float DHT11_temp();
+ *	uint8_t DHT11_rh();
+ *	float DHT11_dewpoint();
+ *	float DHT11_ah();
+ *
+ *	For more information on the DHT11 sensor, please check the datasheet
+ *	provided in the repository
+ *
+ *	This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License along
+ *  with this program; if not, write to the Free Software Foundation, Inc.,
+ *  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
  */
 
 #ifndef INC_DHT11_H_
@@ -38,16 +64,16 @@ typedef struct {
 /**
  * Sets port and pin used to communicate with DHT11.
  * @param  {*GPIO_TypeDef} port - Pin port.
- * @param  {uint16_t} pin - Pin where DHT11 data pin is attatched.
+ * @param  {uint16_t} pin - Pin where DHT11 data pin is attached.
  */
-void DHT11_init(GPIO_TypeDef* port, uint16_t pin); //configura a porta e o pino
+void DHT11_init(GPIO_TypeDef* port, uint16_t pin);
 
 /**
  * Fills the DHT11_struct and returns 1 if checksum is OK and 0 if NOK.
  * Putting all times together, in worst case - 40bits '1' -, the read time would be 26ms.
  * However, the sampling time should be at least 1 second long.
  * @param  {*GPIO_TypeDef} port - Pin port
- * @param  {uint16_t} pin - Pin where DHT11 data pin is attatched
+ * @param  {uint16_t} pin - Pin where DHT11 data pin is attached
  */
 uint8_t DHT11_rawread();
 
