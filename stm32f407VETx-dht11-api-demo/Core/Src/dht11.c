@@ -2,20 +2,28 @@
  *  dht11.c
  *  Copyright (C) 2020  Marcelo Braga & João Melga
  *  Created on: feb-03-2021
- *  Institution: UFMG
+ *  Institution: Universidade Federal de Minas Gerais - UFMG
+ *
+ *  This is an API to read data from a DHT11 sensor with a STM32fxxx
+ *  family microncontroller developed with System Workbench + STM32CubeMX.
+ *
+ *  This API was developed as a work of the Embedded Systems Programming
+ *  discipline from UFMG - Prof. Ricardo de Oliveira Duarte - Department
+ *  of Electronic Engineering.
  *
  *  Version 1.0 - API with the following implemented functions:
- *  void DHT11_init(GPIO_TypeDef* port, uint16_t pin);
- *	uint8_t DHT11_rawread();
- *	float DHT11_temp();
- *	uint8_t DHT11_rh();
- *	float DHT11_dewpoint();
- *	float DHT11_ah();
+ *    void DHT11_init(GPIO_TypeDef* port, uint16_t pin);
+ *    uint8_t DHT11_rawread();
+ *    uint8_t DHT11_rh();
+ *    float DHT11_temp();
+ *    float DHT11_dewpoint();
+ *    float DHT11_ah();
  *
- *	For more information on the DHT11 sensor, please check the datasheet
- *	provided in the repository
+ *  For more information about the DHT11 sensor, please check the datasheet
+ *  provided in the repository
  *
- *	This program is free software; you can redistribute it and/or modify
+ *  /--- LICENCE ---/
+ *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation; either version 2 of the License, or
  *  (at your option) any later version.
@@ -29,6 +37,44 @@
  *  with this program; if not, write to the Free Software Foundation, Inc.,
  *  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
+ *  /--- SOFTWARE & HARDWARE REQUIREMENT ---/
+ *  Resources and Setup:
+ *    - You must set TIM1 to generate an interruption for each us (1MHz), so
+ *      the delay_us() function may work properly and the communication between
+ *      the MCU and the sensor will be established. You can use other Timer at
+ *      all, but you'll need to add it to dht11.c file;
+ *    - Some functions of the API return float values, so ensure your microcontroller
+ *      has a Floating Point Unit;
+ *    - The DHT11 sensor works properly with a 5V power supply (and your STM32fxxx
+ *      probably works with 3v3), so ensure there is a voltage divisor between DHT11
+ *      Data pin and your MCU I/O used to read it.
+ *
+ *  Circuit:
+ *      _____________
+ *     |             |
+ *     |             |
+ *     |             |
+ *     |    DHT11    |
+ *     |    pinout   |
+ *     |             |
+ *     |             |
+ *      -------------
+ *      |   |   |   |
+ *     VCC DATA NC GND
+ *      |   |   |   |
+ *      ^   ^   ^   ^
+ *     5V   |      GND  *Circuit connections
+ *        Voltage
+ *        divisor
+ *          ^
+ *          |
+ *         I/O
+ *
+ *  /--- REFERENCES ---/
+ *  https://circuitdigest.com/microcontroller-projects/interfacing-dht11-sensor-with-stm32f103c8
+ *  https://controllerstech.com/using-dht11-sensor-with-stm32/
+ *  https://carnotcycle.wordpress.com/2012/08/04/how-to-convert-relative-humidity-to-absolute-humidity/
+ *  Slides provided by UFMG - Prof. Ricardo de Oliveira Duarte - Department of Electronic Engineering
  */
 
 #include "dht11.h"
