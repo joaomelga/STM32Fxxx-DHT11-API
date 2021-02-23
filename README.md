@@ -43,6 +43,7 @@ They are structered around a Finite State Machine that changes between the API f
 
 The DHT11 sensor is connected to the PA1 pin in both boards.
 
+Connection Diagram for the BluePill Demo:
 ![BluePillDemoDiagram](https://user-images.githubusercontent.com/71671310/108790976-c48dcb00-755c-11eb-9d66-b2f78e1b44bb.jpg)
 
 ## Licence
