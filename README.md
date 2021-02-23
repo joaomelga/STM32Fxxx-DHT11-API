@@ -27,26 +27,6 @@ To setup and use the API properly you must accomplish the following steps:
   - In Inc/dht11.h, include the properly HAL library according to your microcontroller family;
   - A DHT_struct variable must be declared in your main function, named Dstruct;
   - The DHT11_init() function should be called once in your setup;
-  - Mount your DHT11 sensor in the circuit as following:
-	       _____________
-	      |             |
-	      |             |
-	      |             |
-	      |    DHT11    |
-	      |    pinout   |
-	      |             |
-	      |             |
-	       -------------
-	       |   |   |   |
-	      VCC DATA NC GND
-	       |   |   |   |
-	       ^   ^   ^   ^
-	      5V   |      GND  *Circuit connections
-		 Voltage
-		 divisor
-		   ^
-		   |
-		  I/O
 
 ## Recommendations
 The API will return 0xFF (255 in decimal) in temperature/humidity values if reading of the sensor was not done correctly. If that is the case, you may try:
