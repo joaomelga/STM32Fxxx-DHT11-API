@@ -1,14 +1,15 @@
 # stm32fxxx-dht11-api
 
 Copyright (C) 2020  Marcelo Braga & João Melga
+
 Created on: feb-03-2021
+
 Institution: Universidade Federal de Minas Gerais - UFMG
 
-This is an API to read data from a DHT11 sensor with a STM32fxxx family microncontroller developed with System Workbench + STM32CubeMX. Boards used in development: 
+This is an API to read data from a DHT11 sensor with a STM32fxxx family microncontroller developed with System Workbench + STM32CubeMX.  For more information about the DHT11 sensor, please check the datasheet provided in the repository. Boards used in development: 
   - STM32F103C8Tx board, "Blue Pill" : https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html;
   - STM32F407VET6 board, "Black Board" : https://stm32-base.org/boards/STM32F407VET6-STM32-F4VE-V2.0.html.
 
-For more information about the DHT11 sensor, please check the datasheet provided in the repository
 This API was developed as a work of the Embedded Systems Programming discipline from UFMG - Prof. Ricardo de Oliveira Duarte - Department of Electronic Engineering.
 
 Version 1.0 - API with the following implemented functions:
