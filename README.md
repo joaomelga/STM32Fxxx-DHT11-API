@@ -46,6 +46,10 @@ The DHT11 sensor is connected to the PA1 pin in both boards.
 Connection Diagram for the BluePill Demo:
 ![BluePillDemoDiagram](https://user-images.githubusercontent.com/71671310/108790976-c48dcb00-755c-11eb-9d66-b2f78e1b44bb.jpg)
 
+Output:
+
+![VideoDemoBluePill](https://user-images.githubusercontent.com/71671310/108795432-44b82e80-7565-11eb-9857-d978c0fcd740.gif)
+
 ## Licence
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
