@@ -1,4 +1,5 @@
 # stm32fxxx-dht11-api
+This repository contains an DHT11 API adaptable for STM32FXXX MCUs and a DEMO application developed under the stack CubeMX + SW4STM32 + HAL, so you can test it on your own.
 
 Copyright (C) 2020  Marcelo Braga & João Melga
 
